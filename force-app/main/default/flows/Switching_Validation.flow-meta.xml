@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Flow xmlns="http://soap.sforce.com/2006/04/metadata">
+    <apiVersion>63.0</apiVersion>
+    <decisions>
+        <name>Validate_CUPS</name>
+        <label>Validate CUPS</label>
+        <locationX>176</locationX>
+        <locationY>287</locationY>
+        <defaultConnectorLabel>Invalid CUPS</defaultConnectorLabel>
+        <rules>
+            <name>Valid_CUPS</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.CUPS__c</leftValueReference>
+                <operator>IsNull</operator>
+                <rightValue>
+                    <booleanValue>false</booleanValue>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Validate_Effective_Date</targetReference>
+            </connector>
+            <label>Valid CUPS</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Validate_Effective_Date</name>
+        <label>Validate Effective Date</label>
+        <locationX>176</locationX>
+        <locationY>487</locationY>
+        <defaultConnectorLabel>Invalid Date</defaultConnectorLabel>
+        <rules>
+            <name>Valid_Date</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Effective_Date__c</leftValueReference>
+                <operator>GreaterThan</operator>
+                <rightValue>
+                    <elementReference>$Flow.CurrentDateTime</elementReference>
+                </rightValue>
+            </conditions>
+            <connector>
+                <targetReference>Validate_Status</targetReference>
+            </connector>
+            <label>Valid Date</label>
+        </rules>
+    </decisions>
+    <decisions>
+        <name>Validate_Status</name>
+        <label>Validate Status</label>
+        <locationX>176</locationX>
+        <locationY>687</locationY>
+        <defaultConnectorLabel>Invalid Status</defaultConnectorLabel>
+        <rules>
+            <name>Valid_Status</name>
+            <conditionLogic>and</conditionLogic>
+            <conditions>
+                <leftValueReference>$Record.Status__c</leftValueReference>
+                <operator>EqualTo</operator>
+                <rightValue>
+                    <stringValue>Pending</stringValue>
+                </rightValue>
+            </conditions>
+            <label>Valid Status</label>
+        </rules>
+    </decisions>
+    <environments>Default</environments>
+    <interviewLabel>Switching Validation {!$Flow.CurrentDateTime}</interviewLabel>
+    <label>Switching Validation</label>
+    <processMetadataValues>
+        <name>BuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>CanvasMode</name>
+        <value>
+            <stringValue>AUTO_LAYOUT_CANVAS</stringValue>
+        </value>
+    </processMetadataValues>
+    <processMetadataValues>
+        <name>OriginBuilderType</name>
+        <value>
+            <stringValue>LightningFlowBuilder</stringValue>
+        </value>
+    </processMetadataValues>
+    <processType>AutoLaunchedFlow</processType>
+    <start>
+        <locationX>50</locationX>
+        <locationY>0</locationY>
+        <connector>
+            <targetReference>Validate_CUPS</targetReference>
+        </connector>
+        <object>Switching_Request__c</object>
+        <recordTriggerType>Create</recordTriggerType>
+        <triggerType>RecordBeforeSave</triggerType>
+    </start>
+    <status>Active</status>
+</Flow>

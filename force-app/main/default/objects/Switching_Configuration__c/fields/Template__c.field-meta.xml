@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Template__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Plantilla XML asociada a esta configuración</description>
+    <externalId>false</externalId>
+    <label>Template</label>
+    <referenceTo>XML_Template__c</referenceTo>
+    <relationshipLabel>Switching Configurations</relationshipLabel>
+    <relationshipName>Switching_Configurations</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField> 

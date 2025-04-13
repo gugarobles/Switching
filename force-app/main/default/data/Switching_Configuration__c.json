@@ -1,0 +1,72 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Switching_Configuration__c",
+                "referenceId": "Switching_Configuration__cRef1"
+            },
+            "Name": "Configuración Alta Gas España",
+            "Process_Type__c": "ALTA_GAS",
+            "Status__c": "Active",
+            "Template__c": "@XML_Template__cRef1",
+            "Country__c": "ES",
+            "API_Key__c": "api-key-es",
+            "Endpoint__c": "https://api.cnmc.es/switching",
+            "Endpoint_URL__c": "/alta-gas",
+            "Password__c": "password123",
+            "Username__c": "cnmc_user",
+            "Message_Format__c": "XML"
+        },
+        {
+            "attributes": {
+                "type": "Switching_Configuration__c",
+                "referenceId": "Switching_Configuration__cRef2"
+            },
+            "Name": "Configuración Baja Gas España",
+            "Process_Type__c": "BAJA_GAS",
+            "Status__c": "Active",
+            "Template__c": "@XML_Template__cRef2",
+            "Country__c": "ES",
+            "API_Key__c": "api-key-es",
+            "Endpoint__c": "https://api.cnmc.es/switching",
+            "Endpoint_URL__c": "/baja-gas",
+            "Password__c": "password123",
+            "Username__c": "cnmc_user",
+            "Message_Format__c": "XML"
+        },
+        {
+            "attributes": {
+                "type": "Switching_Configuration__c",
+                "referenceId": "Switching_Configuration__cRef3"
+            },
+            "Name": "Configuración Alta Gas Portugal",
+            "Process_Type__c": "ALTA_GAS",
+            "Status__c": "Active",
+            "Template__c": "@XML_Template__cRef3",
+            "Country__c": "PT",
+            "API_Key__c": "api-key-pt",
+            "Endpoint__c": "https://api.erse.pt/switching",
+            "Endpoint_URL__c": "/alta-gas",
+            "Password__c": "password456",
+            "Username__c": "erse_user",
+            "Message_Format__c": "XML"
+        },
+        {
+            "attributes": {
+                "type": "Switching_Configuration__c",
+                "referenceId": "Switching_Configuration__cRef4"
+            },
+            "Name": "Configuración Baja Gas Portugal",
+            "Process_Type__c": "BAJA_GAS",
+            "Status__c": "Active",
+            "Template__c": "@XML_Template__cRef4",
+            "Country__c": "PT",
+            "API_Key__c": "api-key-pt",
+            "Endpoint__c": "https://api.erse.pt/switching",
+            "Endpoint_URL__c": "/baja-gas",
+            "Password__c": "password456",
+            "Username__c": "erse_user",
+            "Message_Format__c": "XML"
+        }
+    ]
+} 

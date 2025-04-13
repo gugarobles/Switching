@@ -1,0 +1,11 @@
+{
+    "orgName": "Switching Development Org",
+    "edition": "Developer",
+    "features": ["EnableSetPasswordInApi"],
+    "settings": {
+        "orgPreferenceSettings": {
+            "s1DesktopEnabled": true,
+            "selfSetPasswordInApi": true
+        }
+    }
+} 

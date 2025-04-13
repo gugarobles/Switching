@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomApplication xmlns="http://soap.sforce.com/2006/04/metadata">
+    <label>Switching</label>
+    <description>Application for managing switching processes</description>
+    <formFactors>Large</formFactors>
+    <formFactors>Medium</formFactors>
+    <formFactors>Small</formFactors>
+    <isNavAutoTempTabsDisabled>false</isNavAutoTempTabsDisabled>
+    <isNavPersonalizationDisabled>false</isNavPersonalizationDisabled>
+    <isNavTabPersistenceDisabled>false</isNavTabPersistenceDisabled>
+    <tabs>Service__c</tabs>
+    <tabs>Switching_Request__c</tabs>
+    <tabs>Switching_Notification__c</tabs>
+    <uiType>Lightning</uiType>
+    <utilityBar>Switching_Utility_Bar</utilityBar>
+</CustomApplication> 

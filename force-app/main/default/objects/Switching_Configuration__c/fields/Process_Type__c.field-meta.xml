@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Process Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALTA_GAS</fullName>
+                <default>false</default>
+                <label>Alta de Gas</label>
+            </value>
+            <value>
+                <fullName>BAJA_GAS</fullName>
+                <default>false</default>
+                <label>Baja de Gas</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA</fullName>
+                <default>false</default>
+                <label>Cambio de Comercializadora</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_TITULAR</fullName>
+                <default>false</default>
+                <label>Cambio de Titular</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_TITULAR</fullName>
+                <default>false</default>
+                <label>Cambio de Comercializadora y Titular</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

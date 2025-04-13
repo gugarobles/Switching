@@ -1,0 +1,76 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef1"
+            },
+            "Name": "Plantilla Mensaje Alta Gas NATURGY",
+            "Distributor__c": "NATURGY",
+            "Process_Type__c": "ALTA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeAltaGas>\n  <Cabecera>\n    <TipoMensaje>ALTA_GAS</TipoMensaje>\n    <Distribuidor>NATURGY</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeAltaGas>"
+        },
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef2"
+            },
+            "Name": "Plantilla Mensaje Baja Gas NATURGY",
+            "Distributor__c": "NATURGY",
+            "Process_Type__c": "BAJA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeBajaGas>\n  <Cabecera>\n    <TipoMensaje>BAJA_GAS</TipoMensaje>\n    <Distribuidor>NATURGY</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeBajaGas>"
+        },
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef3"
+            },
+            "Name": "Plantilla Mensaje Alta Gas ENDESA",
+            "Distributor__c": "ENDESA",
+            "Process_Type__c": "ALTA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeAltaGas>\n  <Cabecera>\n    <TipoMensaje>ALTA_GAS</TipoMensaje>\n    <Distribuidor>ENDESA</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeAltaGas>"
+        },
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef4"
+            },
+            "Name": "Plantilla Mensaje Baja Gas ENDESA",
+            "Distributor__c": "ENDESA",
+            "Process_Type__c": "BAJA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeBajaGas>\n  <Cabecera>\n    <TipoMensaje>BAJA_GAS</TipoMensaje>\n    <Distribuidor>ENDESA</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeBajaGas>"
+        },
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef5"
+            },
+            "Name": "Plantilla Mensaje Alta Gas IBERDROLA",
+            "Distributor__c": "IBERDROLA",
+            "Process_Type__c": "ALTA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeAltaGas>\n  <Cabecera>\n    <TipoMensaje>ALTA_GAS</TipoMensaje>\n    <Distribuidor>IBERDROLA</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeAltaGas>"
+        },
+        {
+            "attributes": {
+                "type": "Message_Template__c",
+                "referenceId": "Message_Template__cRef6"
+            },
+            "Name": "Plantilla Mensaje Baja Gas IBERDROLA",
+            "Distributor__c": "IBERDROLA",
+            "Process_Type__c": "BAJA_GAS",
+            "Active__c": true,
+            "Version__c": "1.0",
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<MensajeBajaGas>\n  <Cabecera>\n    <TipoMensaje>BAJA_GAS</TipoMensaje>\n    <Distribuidor>IBERDROLA</Distribuidor>\n  </Cabecera>\n  <DatosCliente>\n    <Nombre>${Holder_Name__c}</Nombre>\n    <NIF>${Holder_NIF__c}</NIF>\n  </DatosCliente>\n  <DatosServicio>\n    <CUPS>${CUPS__c}</CUPS>\n    <TipoEnergia>GAS</TipoEnergia>\n  </DatosServicio>\n</MensajeBajaGas>"
+        }
+    ]
+} 

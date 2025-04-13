@@ -1,0 +1,35 @@
+# List files or directories below to ignore them when running force:source:push, force:source:pull, and force:source:status
+# More information: https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_exclude_source.htm
+#
+
+# Standard metadata
+package.xml
+**/appMenus/
+**/appSwitcher/
+**/aura/
+**/components/
+**/contentassets/
+**/flexipages/
+**/layouts/
+**/objects/*/object-meta.xml
+**/pages/
+**/quickActions/
+**/staticresources/
+**/tabs/
+**/wave/
+
+# LWC configuration
+**/jsconfig.json
+**/.eslintrc.json
+
+# LWC Jest
+**/__tests__/**
+
+# Files that are not part of the project
+**/.DS_Store
+**/node_modules/
+**/.git/
+**/.vscode/
+**/.sfdx/
+**/docs/
+**/README.md 

@@ -1,0 +1,22 @@
+# Salesforce specific
+.sf/
+.sfdx/
+.forceignore
+*.log
+*.zip
+*.backup
+*.orig
+*.swp
+.DS_Store
+node_modules/
+.vscode/
+.idea/
+*.class
+*.pyc
+__pycache__/
+*.pyo
+*.pyd
+.Python
+env/
+venv/
+.venv/ 

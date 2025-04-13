@@ -1,0 +1,32 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Service__c",
+                "referenceId": "Service__cRef1"
+            },
+            "Name": "Servicio de Electricidad 1",
+            "CUPS__c": "ES1234567890123456",
+            "Energy_Type__c": "Electricity",
+            "Status__c": "Active",
+            "Type__c": "Electricity",
+            "Holder_Name__c": "Juan Pérez",
+            "Holder_NIF__c": "12345678A",
+            "AccountId__c": "@AccountRef1"
+        },
+        {
+            "attributes": {
+                "type": "Service__c",
+                "referenceId": "Service__cRef2"
+            },
+            "Name": "Servicio de Gas 1",
+            "CUPS__c": "ES9876543210987654",
+            "Energy_Type__c": "Gas",
+            "Status__c": "Active",
+            "Type__c": "Gas",
+            "Holder_Name__c": "María García",
+            "Holder_NIF__c": "87654321B",
+            "AccountId__c": "@AccountRef2"
+        }
+    ]
+} 

@@ -1,0 +1,38 @@
+[
+    {
+        "sobject": "Account",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": ["Account.json", "Distributor.json"]
+    },
+    {
+        "sobject": "Service__c",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": ["Service__c.json"]
+    },
+    {
+        "sobject": "Switching_Request__c",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": ["Switching_Request__c.json"]
+    },
+    {
+        "sobject": "Switching_Notification__c",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": ["Switching_Notification__c.json"]
+    },
+    {
+        "sobject": "XML_Template__c",
+        "saveRefs": true,
+        "resolveRefs": false,
+        "files": ["XML_Template__c.json"]
+    },
+    {
+        "sobject": "Switching_Configuration__c",
+        "saveRefs": true,
+        "resolveRefs": true,
+        "files": ["Switching_Configuration__c.json"]
+    }
+] 

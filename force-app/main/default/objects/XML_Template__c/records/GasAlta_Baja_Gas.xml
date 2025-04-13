@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<BajaGas>
+    <Cabecera>
+        <TipoMensaje>{{ProcessType}}</TipoMensaje>
+        <Fecha>{{RequestDate}}</Fecha>
+        <Distribuidor>GASALTA</Distribuidor>
+    </Cabecera>
+    <DatosServicio>
+        <CUPS>{{CUPS}}</CUPS>
+        <FechaEfecto>{{EffectiveDate}}</FechaEfecto>
+    </DatosServicio>
+    <DatosCliente>
+        <Nombre>{{CustomerName}}</Nombre>
+        <NIF>{{CustomerNIF}}</NIF>
+        <Telefono>{{CustomerPhone}}</Telefono>
+        <Email>{{CustomerEmail}}</Email>
+    </DatosCliente>
+    <Motivo>
+        <Codigo>{{ReasonCode}}</Codigo>
+        <Descripcion>{{ReasonDescription}}</Descripcion>
+    </Motivo>
+</BajaGas> 

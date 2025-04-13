@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Type__c</fullName>
+    <description>Type of switching process</description>
+    <externalId>false</externalId>
+    <inlineHelpText>Select the type of switching process</inlineHelpText>
+    <label>Process Type</label>
+    <required>true</required>
+    <trackHistory>true</trackHistory>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ALTA_GAS</fullName>
+                <default>false</default>
+                <label>Alta Gas</label>
+            </value>
+            <value>
+                <fullName>BAJA_GAS</fullName>
+                <default>false</default>
+                <label>Baja Gas</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA</fullName>
+                <default>false</default>
+                <label>Cambio Comercializadora</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_TITULAR</fullName>
+                <default>false</default>
+                <label>Cambio Titular</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_TITULAR</fullName>
+                <default>false</default>
+                <label>Cambio Comercializadora y Titular</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_COMERCIALIZADORA_GAS</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_TITULAR_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_COMERCIALIZADORA_TITULAR_GAS</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_TITULAR_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_TITULAR_GAS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

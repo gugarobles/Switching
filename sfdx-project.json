@@ -1,0 +1,18 @@
+{
+    "packageDirectories": [
+        {
+            "path": "force-app",
+            "default": true
+        }
+    ],
+    "namespace": "",
+    "sfdcLoginUrl": "https://login.salesforce.com",
+    "sourceApiVersion": "58.0",
+    "features": ["EnableSetPasswordInApi"],
+    "settings": {
+        "orgPreferenceSettings": {
+            "s1DesktopEnabled": true,
+            "selfSetPasswordInApi": true
+        }
+    }
+} 

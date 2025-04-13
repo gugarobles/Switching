@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Process_Type__c</fullName>
+    <externalId>false</externalId>
+    <label>Process Type</label>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>ACTIVATION</fullName>
+                <default>false</default>
+                <label>Gas Supply Activation</label>
+            </value>
+            <value>
+                <fullName>DEACTIVATION</fullName>
+                <default>false</default>
+                <label>Gas Supply Deactivation</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_COMERCIALIZADORA_GAS</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_COMERCIALIZADORA_TITULAR_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_COMERCIALIZADORA_TITULAR_GAS</label>
+            </value>
+            <value>
+                <fullName>CAMBIO_TITULAR_GAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>CAMBIO_TITULAR_GAS</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>

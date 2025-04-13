@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+    <types>
+        <members>Switching_Configuration__c</members>
+        <members>Switching_Message__c</members>
+        <members>Switching_Request__c</members>
+        <members>XML_Template__c</members>
+        <members>Service__c</members>
+        <members>Switching_Notification__c</members>
+        <name>CustomObject</name>
+    </types>
+    <types>
+        <members>Switching_Configuration__c.Distributor__c</members>
+        <members>Switching_Configuration__c.Integration_Class__c</members>
+        <members>Switching_Configuration__c.Process_Type__c</members>
+        <members>Switching_Message__c.Message_Content__c</members>
+        <members>Switching_Message__c.Message_Type__c</members>
+        <members>Switching_Message__c.Request__c</members>
+        <members>Switching_Message__c.Status__c</members>
+        <members>Switching_Request__c.Distributor__c</members>
+        <members>Switching_Request__c.Process_Type__c</members>
+        <members>Switching_Request__c.ServiceId__c</members>
+        <members>XML_Template__c.CodigoProceso__c</members>
+        <members>XML_Template__c.Country__c</members>
+        <members>XML_Template__c.Distributor__c</members>
+        <members>XML_Template__c.Process_Type__c</members>
+        <members>XML_Template__c.Template__c</members>
+        <name>CustomField</name>
+    </types>
+    <version>58.0</version>
+</Package> 

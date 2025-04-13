@@ -1,0 +1,26 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Switching_Notification__c",
+                "referenceId": "Switching_Notification__cRef1"
+            },
+            "Name": "Notificación 1",
+            "Type__c": "Información",
+            "Status__c": "Success",
+            "Message__c": "Proceso completado correctamente",
+            "Request__c": "@Switching_Request__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Switching_Notification__c",
+                "referenceId": "Switching_Notification__cRef2"
+            },
+            "Name": "Notificación de Error 1",
+            "Type__c": "Error",
+            "Status__c": "Error",
+            "Message__c": "Error al procesar la solicitud de baja",
+            "Request__c": "@Switching_Request__cRef2"
+        }
+    ]
+} 

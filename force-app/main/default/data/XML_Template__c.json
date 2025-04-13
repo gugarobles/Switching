@@ -1,0 +1,60 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "XML_Template__c",
+                "referenceId": "XML_Template__cRef1"
+            },
+            "Name": "Plantilla Alta Gas España",
+            "Distributor__c": "GASALTA",
+            "Process_Type__c": "ALTA_GAS",
+            "Regulatory_Process_Type__c": "B1",
+            "Country__c": "ES",
+            "Active__c": true,
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Mensaje>\n    <Cabecera>\n        <CodigoProceso>B1</CodigoProceso>\n        <FechaHora>${TODAY()}</FechaHora>\n        <CodigoDistribuidor>${Distributor_Code__c}</CodigoDistribuidor>\n    </Cabecera>\n    <DatosCliente>\n        <TipoPersona>${Account.Type}</TipoPersona>\n        <Nombre>${Account.Name}</Nombre>\n        <NIF>${Account.NIF__c}</NIF>\n        <Telefono>${Account.Phone}</Telefono>\n        <Email>${Account.Email__c}</Email>\n        <Direccion>\n            <TipoVia>${Account.BillingStreetType__c}</TipoVia>\n            <NombreVia>${Account.BillingStreetName__c}</NombreVia>\n            <Numero>${Account.BillingStreetNumber__c}</Numero>\n            <Piso>${Account.BillingFloor__c}</Piso>\n            <Puerta>${Account.BillingDoor__c}</Puerta>\n            <CodigoPostal>${Account.BillingPostalCode}</CodigoPostal>\n            <Municipio>${Account.BillingCity}</Municipio>\n            <Provincia>${Account.BillingState}</Provincia>\n        </Direccion>\n    </DatosCliente>\n    <DatosServicio>\n        <CUPS>${Service__c.CUPS__c}</CUPS>\n        <TipoEnergia>GAS</TipoEnergia>\n        <Tarifa>${Service__c.Tariff__c}</Tarifa>\n        <PotenciaContratada>${Service__c.Contracted_Power__c}</PotenciaContratada>\n        <FechaSolicitud>${TODAY()}</FechaSolicitud>\n        <FechaEfecto>${Switching_Request__c.Effective_Date__c}</FechaEfecto>\n    </DatosServicio>\n</Mensaje>",
+            "Version__c": 2
+        },
+        {
+            "attributes": {
+                "type": "XML_Template__c",
+                "referenceId": "XML_Template__cRef2"
+            },
+            "Name": "Plantilla Baja Gas España",
+            "Distributor__c": "GASALTA",
+            "Process_Type__c": "BAJA_GAS",
+            "Regulatory_Process_Type__c": "C1",
+            "Country__c": "ES",
+            "Active__c": true,
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Mensaje>\n    <Cabecera>\n        <CodigoProceso>C1</CodigoProceso>\n        <FechaHora>${TODAY()}</FechaHora>\n        <CodigoDistribuidor>${Distributor_Code__c}</CodigoDistribuidor>\n    </Cabecera>\n    <DatosCliente>\n        <TipoPersona>${Account.Type}</TipoPersona>\n        <Nombre>${Account.Name}</Nombre>\n        <NIF>${Account.NIF__c}</NIF>\n        <Telefono>${Account.Phone}</Telefono>\n        <Email>${Account.Email__c}</Email>\n        <Direccion>\n            <TipoVia>${Account.BillingStreetType__c}</TipoVia>\n            <NombreVia>${Account.BillingStreetName__c}</NombreVia>\n            <Numero>${Account.BillingStreetNumber__c}</Numero>\n            <Piso>${Account.BillingFloor__c}</Piso>\n            <Puerta>${Account.BillingDoor__c}</Puerta>\n            <CodigoPostal>${Account.BillingPostalCode}</CodigoPostal>\n            <Municipio>${Account.BillingCity}</Municipio>\n            <Provincia>${Account.BillingState}</Provincia>\n        </Direccion>\n    </DatosCliente>\n    <DatosServicio>\n        <CUPS>${Service__c.CUPS__c}</CUPS>\n        <TipoEnergia>GAS</TipoEnergia>\n        <Tarifa>${Service__c.Tariff__c}</Tarifa>\n        <PotenciaContratada>${Service__c.Contracted_Power__c}</PotenciaContratada>\n        <FechaSolicitud>${TODAY()}</FechaSolicitud>\n        <FechaEfecto>${Switching_Request__c.Effective_Date__c}</FechaEfecto>\n        <MotivoBaja>${Switching_Request__c.Cancellation_Reason__c}</MotivoBaja>\n    </DatosServicio>\n</Mensaje>",
+            "Version__c": 2
+        },
+        {
+            "attributes": {
+                "type": "XML_Template__c",
+                "referenceId": "XML_Template__cRef3"
+            },
+            "Name": "Plantilla Alta Gas Portugal",
+            "Distributor__c": "GASALTA",
+            "Process_Type__c": "ALTA_GAS",
+            "Regulatory_Process_Type__c": "B1",
+            "Country__c": "PT",
+            "Active__c": true,
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Message>\n    <Header>\n        <ProcessCode>B1</ProcessCode>\n        <DateTime>${TODAY()}</DateTime>\n        <DistributorCode>${Distributor_Code__c}</DistributorCode>\n    </Header>\n    <CustomerData>\n        <PersonType>${Account.Type}</PersonType>\n        <Name>${Account.Name}</Name>\n        <NIF>${Account.NIF__c}</NIF>\n        <Phone>${Account.Phone}</Phone>\n        <Email>${Account.Email__c}</Email>\n        <Address>\n            <StreetType>${Account.BillingStreetType__c}</StreetType>\n            <StreetName>${Account.BillingStreetName__c}</StreetName>\n            <Number>${Account.BillingStreetNumber__c}</Number>\n            <Floor>${Account.BillingFloor__c}</Floor>\n            <Door>${Account.BillingDoor__c}</Door>\n            <PostalCode>${Account.BillingPostalCode}</PostalCode>\n            <City>${Account.BillingCity}</City>\n            <State>${Account.BillingState}</State>\n        </Address>\n    </CustomerData>\n    <ServiceData>\n        <CUPS>${Service__c.CUPS__c}</CUPS>\n        <EnergyType>GAS</EnergyType>\n        <Tariff>${Service__c.Tariff__c}</Tariff>\n        <ContractedPower>${Service__c.Contracted_Power__c}</ContractedPower>\n        <RequestDate>${TODAY()}</RequestDate>\n        <EffectiveDate>${Switching_Request__c.Effective_Date__c}</EffectiveDate>\n    </ServiceData>\n</Message>",
+            "Version__c": 2
+        },
+        {
+            "attributes": {
+                "type": "XML_Template__c",
+                "referenceId": "XML_Template__cRef4"
+            },
+            "Name": "Plantilla Baja Gas Portugal",
+            "Distributor__c": "GASALTA",
+            "Process_Type__c": "BAJA_GAS",
+            "Regulatory_Process_Type__c": "C1",
+            "Country__c": "PT",
+            "Active__c": true,
+            "Template_Content__c": "<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<Message>\n    <Header>\n        <ProcessCode>C1</ProcessCode>\n        <DateTime>${TODAY()}</DateTime>\n        <DistributorCode>${Distributor_Code__c}</DistributorCode>\n    </Header>\n    <CustomerData>\n        <PersonType>${Account.Type}</PersonType>\n        <Name>${Account.Name}</Name>\n        <NIF>${Account.NIF__c}</NIF>\n        <Phone>${Account.Phone}</Phone>\n        <Email>${Account.Email__c}</Email>\n        <Address>\n            <StreetType>${Account.BillingStreetType__c}</StreetType>\n            <StreetName>${Account.BillingStreetName__c}</StreetName>\n            <Number>${Account.BillingStreetNumber__c}</Number>\n            <Floor>${Account.BillingFloor__c}</Floor>\n            <Door>${Account.BillingDoor__c}</Door>\n            <PostalCode>${Account.BillingPostalCode}</PostalCode>\n            <City>${Account.BillingCity}</City>\n            <State>${Account.BillingState}</State>\n        </Address>\n    </CustomerData>\n    <ServiceData>\n        <CUPS>${Service__c.CUPS__c}</CUPS>\n        <EnergyType>GAS</EnergyType>\n        <Tariff>${Service__c.Tariff__c}</Tariff>\n        <ContractedPower>${Service__c.Contracted_Power__c}</ContractedPower>\n        <RequestDate>${TODAY()}</RequestDate>\n        <EffectiveDate>${Switching_Request__c.Effective_Date__c}</EffectiveDate>\n        <CancellationReason>${Switching_Request__c.Cancellation_Reason__c}</CancellationReason>\n    </ServiceData>\n</Message>",
+            "Version__c": 2
+        }
+    ]
+} 

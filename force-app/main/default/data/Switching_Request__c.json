@@ -1,0 +1,34 @@
+{
+    "records": [
+        {
+            "attributes": {
+                "type": "Switching_Request__c",
+                "referenceId": "Switching_Request__cRef1"
+            },
+            "Name": "Solicitud de Alta 1",
+            "Process_Type__c": "ALTA_GAS",
+            "Status__c": "Draft",
+            "Type__c": "Alta",
+            "Request_Date__c": "2024-04-13",
+            "Effective_Date__c": "2024-05-01",
+            "CUPS__c": "ES1234567890123456",
+            "Distributor__c": "@DistributorRef1",
+            "Service__c": "@Service__cRef1"
+        },
+        {
+            "attributes": {
+                "type": "Switching_Request__c",
+                "referenceId": "Switching_Request__cRef2"
+            },
+            "Name": "Solicitud de Baja 1",
+            "Process_Type__c": "BAJA_GAS",
+            "Status__c": "Pending",
+            "Type__c": "Baja",
+            "Request_Date__c": "2024-04-13",
+            "Effective_Date__c": "2024-05-01",
+            "CUPS__c": "ES9876543210987654",
+            "Distributor__c": "@DistributorRef1",
+            "Service__c": "@Service__cRef2"
+        }
+    ]
+} 
