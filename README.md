@@ -161,6 +161,90 @@ Plantillas XML para las comunicaciones.
   - `Template_Content__c`: Contenido de la plantilla
   - `Version__c`: Versión
 
+### Objetos de Configuración
+
+#### Switching_Configuration__c
+Objeto principal de configuración del sistema.
+- **Campos principales**:
+  - `API_Key__c`: Clave API para autenticación
+  - `Active__c`: Indica si la configuración está activa
+  - `Country__c`: País de la configuración
+  - `Distributor__c`: Distribuidora asociada
+  - `Endpoint_URL__c`: URL del endpoint de la API
+  - `Integration_Class__c`: Clase Apex de integración
+  - `Message_Format__c`: Formato de mensaje (XML/JSON)
+  - `Process_Type__c`: Tipo de proceso configurado
+  - `Template__c`: Plantilla asociada
+  - `Timeout__c`: Tiempo de espera en segundos
+  - `Max_Retries__c`: Número máximo de reintentos
+  - `Retry_Interval__c`: Intervalo entre reintentos (minutos)
+
+#### XML_Template__c
+Configuración de plantillas XML para las comunicaciones.
+- **Campos principales**:
+  - `Active__c`: Indica si la plantilla está activa
+  - `CodigoProceso__c`: Código del proceso
+  - `Country__c`: País de la plantilla
+  - `Distributor__c`: Distribuidora asociada
+  - `Process_Type__c`: Tipo de proceso
+  - `Template_Body__c`: Cuerpo de la plantilla
+  - `Template_Content__c`: Contenido de la plantilla
+  - `Version__c`: Versión de la plantilla
+  - `Validation_Rules__c`: Reglas de validación
+  - `Required_Fields__c`: Campos obligatorios
+
+#### Switching_Notification_Config__c
+Configuración de notificaciones del sistema.
+- **Campos principales**:
+  - `Active__c`: Indica si la configuración está activa
+  - `Notification_Type__c`: Tipo de notificación
+  - `Email_Template__c`: Plantilla de email
+  - `Recipients__c`: Destinatarios
+  - `Trigger_Events__c`: Eventos que activan la notificación
+  - `Conditions__c`: Condiciones para enviar la notificación
+  - `Priority__c`: Prioridad de la notificación
+
+#### Switching_Retry_Config__c
+Configuración de reintentos automáticos.
+- **Campos principales**:
+  - `Active__c`: Indica si la configuración está activa
+  - `Process_Type__c`: Tipo de proceso
+  - `Max_Retries__c`: Número máximo de reintentos
+  - `Retry_Interval__c`: Intervalo entre reintentos
+  - `Error_Types__c`: Tipos de error que activan el reintento
+  - `Conditions__c`: Condiciones para el reintento
+  - `Notification_Config__c`: Configuración de notificación para reintentos
+
+#### Switching_Validation_Rules__c
+Reglas de validación para los procesos.
+- **Campos principales**:
+  - `Active__c`: Indica si la regla está activa
+  - `Process_Type__c`: Tipo de proceso
+  - `Field_Name__c`: Campo a validar
+  - `Validation_Type__c`: Tipo de validación
+  - `Validation_Rule__c`: Regla de validación
+  - `Error_Message__c`: Mensaje de error
+  - `Severity__c`: Severidad del error
+
+### Diagrama de Configuración
+```mermaid
+graph TD
+    A[Switching_Configuration__c] --> B[XML_Template__c]
+    A --> C[Switching_Notification_Config__c]
+    A --> D[Switching_Retry_Config__c]
+    A --> E[Switching_Validation_Rules__c]
+    
+    B --> F[Plantillas XML]
+    C --> G[Notificaciones]
+    D --> H[Reintentos]
+    E --> I[Validaciones]
+    
+    F --> J[Procesos]
+    G --> J
+    H --> J
+    I --> J
+```
+
 ### Clases Apex
 
 #### Clases Base
@@ -781,61 +865,174 @@ Para soporte técnico o consultas, contactar con el equipo de desarrollo.
 
 ## Ejemplos Prácticos
 
-### 1. Alta de Suministro Eléctrico
+### 1. Configuración del Sistema
 ```apex
+// 1. Crear configuración base para Endesa
+Switching_Configuration__c configEndesa = new Switching_Configuration__c(
+    Name = 'Endesa_Config',
+    Process_Type__c = 'ALTA_ELECTRICIDAD',
+    Status__c = 'Active',
+    Country__c = 'ES',
+    Distributor__c = 'ENDESA',
+    Active__c = true,
+    Endpoint_URL__c = 'https://api.endesa.com/v1/switching',
+    API_Key__c = 'tu-api-key',
+    Integration_Class__c = 'EndesaIntegration',
+    Message_Format__c = 'XML',
+    Timeout__c = 30,
+    Max_Retries__c = 3,
+    Retry_Interval__c = 5,
+    Username__c = 'endesa_user',
+    Password__c = 'password123',
+    Endpoint__c = 'https://api.endesa.com'
+);
+insert configEndesa;
+
+// 2. Crear plantilla XML para alta eléctrica
+XML_Template__c plantillaAlta = new XML_Template__c(
+    Name = 'Alta_Electrica_Endesa',
+    Distributor__c = 'ENDESA',
+    Process_Type__c = 'ALTA_ELECTRICIDAD',
+    Active__c = true,
+    Template_Body__c = '<?xml version="1.0"?><solicitud><cups>{CUPS}</cups><titular><nif>{NIF}</nif><nombre>{NOMBRE}</nombre></titular></solicitud>',
+    Version__c = 1.0,
+    Process_Code__c = 'ALTA_ELEC',
+    CodigoProceso__c = 'ALTA_ELEC'
+);
+insert plantillaAlta;
+
+// 3. Crear plantilla XML para cambio de comercializadora
+XML_Template__c plantillaCambio = new XML_Template__c(
+    Name = 'Cambio_Comercializadora_Endesa',
+    Distributor__c = 'ENDESA',
+    Process_Type__c = 'CAMBIO_COMERCIALIZADORA_ELECTRICIDAD',
+    Active__c = true,
+    Template_Body__c = '<?xml version="1.0"?><solicitud><cups>{CUPS}</cups><nueva_comercializadora>{NUEVA_COMERCIALIZADORA}</nueva_comercializadora><fecha_efectiva>{FECHA_EFECTIVA}</fecha_efectiva></solicitud>',
+    Version__c = 1.0,
+    Process_Code__c = 'CAMBIO_COM',
+    CodigoProceso__c = 'CAMBIO_COM'
+);
+insert plantillaCambio;
+
+// 4. Configurar notificaciones
+Switching_Notification_Config__c notifConfig = new Switching_Notification_Config__c(
+    Name = 'Notificaciones_Endesa',
+    Active__c = true,
+    Notification_Type__c = 'EMAIL',
+    Email_Template__c = 'Switching_Notification_Template',
+    Recipients__c = 'admin@empresa.com;operaciones@empresa.com',
+    Trigger_Events__c = 'ERROR;ESTADO_CAMBIADO;PROCESO_COMPLETADO',
+    Priority__c = 'HIGH'
+);
+insert notifConfig;
+
+// 5. Configurar reintentos
+Switching_Retry_Config__c retryConfig = new Switching_Retry_Config__c(
+    Name = 'Reintentos_Endesa',
+    Active__c = true,
+    Process_Type__c = 'ALTA_ELECTRICIDAD',
+    Max_Retries__c = 3,
+    Retry_Interval__c = 5,
+    Error_Types__c = 'TIMEOUT;CONNECTION_ERROR',
+    Conditions__c = 'STATUS:PENDIENTE',
+    Notification_Config__c = notifConfig.Id
+);
+insert retryConfig;
+```
+
+### 2. Alta de Suministro Eléctrico
+```apex
+// Crear una cuenta para el cliente
+Account cliente = new Account(
+    Name = 'Juan Pérez',
+    BillingCountry = 'ES'
+);
+insert cliente;
+
 // Crear un nuevo suministro eléctrico
 Service__c nuevoSuministro = new Service__c(
     Name = 'ES1234000000000000JN',
-    CUPS__c = 'ES1234000000000000JN',
+    CUPS_Electricidad__c = 'ES1234000000000000JN',
     Energy_Type__c = 'Electricidad',
-    Distributor__c = 'Endesa',
+    Distributor__c = 'NATURGY',
     Holder_NIF__c = '12345678A',
     Holder_Name__c = 'Juan Pérez',
     Effective_Date__c = Date.today().addDays(15),
-    Status__c = 'Pendiente'
+    Status__c = 'Pendiente',
+    AccountId__c = cliente.Id
 );
 insert nuevoSuministro;
 
+// Crear la solicitud de alta
+Switching_Request__c solicitud = new Switching_Request__c(
+    Service__c = nuevoSuministro.Id,
+    Process_Type__c = 'ALTA_ELECTRICIDAD',
+    Status__c = 'Pendiente',
+    Request_Date__c = Datetime.now()
+);
+insert solicitud;
+
 // Iniciar el proceso de alta
-Switching_Service.iniciarProcesoAlta(nuevoSuministro.Id);
+ElecAltaProcess proceso = new ElecAltaProcess(solicitud);
+proceso.execute();
 ```
 
-### 2. Cambio de Comercializadora
+### 3. Cambio de Comercializadora
 ```apex
 // Obtener el suministro existente
-Service__c suministro = [SELECT Id, CUPS__c, Distributor__c 
+Service__c suministro = [SELECT Id, CUPS_Electricidad__c, Distributor__c 
                         FROM Service__c 
-                        WHERE CUPS__c = 'ES1234000000000000JN' 
+                        WHERE CUPS_Electricidad__c = 'ES1234000000000000JN' 
                         LIMIT 1];
 
-// Actualizar con la nueva comercializadora
-suministro.New_Supplier__c = 'Nueva Comercializadora';
-suministro.Effective_Date__c = Date.today().addDays(30);
-update suministro;
+// Crear la solicitud de cambio
+Switching_Request__c solicitud = new Switching_Request__c(
+    Service__c = suministro.Id,
+    Process_Type__c = 'CAMBIO_COMERCIALIZADORA_ELECTRICIDAD',
+    New_Supplier__c = 'Nueva Comercializadora',
+    Effective_Date__c = Date.today().addDays(30),
+    Status__c = 'Pendiente',
+    Request_Date__c = Datetime.now()
+);
+insert solicitud;
 
 // Iniciar el proceso de cambio
-Switching_Service.iniciarProcesoCambioComercializadora(suministro.Id);
+ElecCambioComercializadoraProcess proceso = new ElecCambioComercializadoraProcess(solicitud);
+proceso.execute();
 ```
 
-### 3. Cambio de Titular
+### 4. Cambio de Titular
 ```apex
-// Preparar datos del nuevo titular
-Service__c suministro = [SELECT Id FROM Service__c 
-                        WHERE CUPS__c = 'ES1234000000000000JN' 
+// Obtener el suministro existente
+Service__c suministro = [SELECT Id, CUPS_Electricidad__c 
+                        FROM Service__c 
+                        WHERE CUPS_Electricidad__c = 'ES1234000000000000JN' 
                         LIMIT 1];
 
-suministro.New_Holder_NIF__c = '87654321B';
-suministro.New_Holder_Name__c = 'María García';
-update suministro;
+// Crear la solicitud de cambio de titular
+Switching_Request__c solicitud = new Switching_Request__c(
+    Service__c = suministro.Id,
+    Process_Type__c = 'CAMBIO_TITULAR_ELECTRICIDAD',
+    New_Holder_NIF__c = '87654321B',
+    New_Holder_Name__c = 'María García',
+    Status__c = 'Pendiente',
+    Request_Date__c = Datetime.now()
+);
+insert solicitud;
 
 // Iniciar el proceso de cambio de titular
-Switching_Service.iniciarProcesoCambioTitular(suministro.Id);
+ElecCambioTitularProcess proceso = new ElecCambioTitularProcess(solicitud);
+proceso.execute();
 ```
 
-### 4. Consulta de Estado
+### 5. Consulta de Estado
 ```apex
 // Obtener el estado actual de una solicitud
-Switching_Request__c solicitud = [SELECT Id, Status__c, Error_Message__c 
+Switching_Request__c solicitud = [SELECT Id, Status__c, Error_Message__c, 
+                                (SELECT Id, Status__c, Message_Type__c 
+                                 FROM Switching_Messages__r 
+                                 ORDER BY CreatedDate DESC 
+                                 LIMIT 1)
                                 FROM Switching_Request__c 
                                 WHERE Service__c = :suministro.Id 
                                 ORDER BY CreatedDate DESC 
@@ -845,73 +1042,100 @@ System.debug('Estado actual: ' + solicitud.Status__c);
 if (solicitud.Error_Message__c != null) {
     System.debug('Error: ' + solicitud.Error_Message__c);
 }
+if (!solicitud.Switching_Messages__r.isEmpty()) {
+    System.debug('Último mensaje: ' + solicitud.Switching_Messages__r[0].Message_Type__c);
+}
 ```
 
-### 5. Configuración de Integración
+### 6. Configuración de Integración
 ```apex
 // Configurar integración con Endesa
 Switching_Configuration__c configEndesa = new Switching_Configuration__c(
     Name = 'Endesa_Config',
-    Distributor__c = 'Endesa',
+    Process_Type__c = 'ALTA_ELECTRICIDAD',
+    Status__c = 'Active',
+    Country__c = 'ES',
+    Distributor__c = 'ENDESA',
     Active__c = true,
     Endpoint_URL__c = 'https://api.endesa.com/v1/switching',
     API_Key__c = 'tu-api-key',
     Integration_Class__c = 'EndesaIntegration',
     Message_Format__c = 'XML',
-    Timeout__c = 30
+    Timeout__c = 30,
+    Max_Retries__c = 3,
+    Retry_Interval__c = 5,
+    Username__c = 'endesa_user',
+    Password__c = 'password123',
+    Endpoint__c = 'https://api.endesa.com'
 );
 insert configEndesa;
 ```
 
-### 6. Plantilla XML Personalizada
+### 7. Plantilla XML Personalizada
 ```apex
 // Crear una plantilla XML para alta eléctrica
 XML_Template__c plantilla = new XML_Template__c(
     Name = 'Alta_Electrica_Endesa',
-    Distributor__c = 'Endesa',
+    Distributor__c = 'ENDESA',
     Process_Type__c = 'ALTA_ELECTRICIDAD',
     Active__c = true,
     Template_Body__c = '<?xml version="1.0"?><solicitud><cups>{CUPS}</cups><titular><nif>{NIF}</nif><nombre>{NOMBRE}</nombre></titular></solicitud>',
-    Version__c = '1.0'
+    Version__c = '1.0',
+    Validation_Rules__c = 'CUPS:required|NIF:required|NOMBRE:required',
+    Required_Fields__c = 'CUPS,NIF,NOMBRE'
 );
 insert plantilla;
 ```
 
-### 7. Manejo de Errores
+### 8. Manejo de Errores
 ```apex
 try {
-    Switching_Service.procesarSolicitud(solicitudId);
-} catch (SwitchingException e) {
-    // Registrar el error
-    SwitchingErrorHandler.registrarError(e);
+    // Obtener la solicitud
+    Switching_Request__c solicitud = [SELECT Id, Status__c 
+                                    FROM Switching_Request__c 
+                                    WHERE Id = :solicitudId];
     
-    // Notificar al usuario
-    SwitchingNotification.notificarError(
-        solicitudId,
-        'Error en el proceso de switching: ' + e.getMessage()
-    );
+    // Procesar la solicitud
+    ElecAltaProcess proceso = new ElecAltaProcess(solicitud);
+    proceso.execute();
+    
+} catch (Exception e) {
+    // Registrar el error
+    SwitchingErrorHandler.handleError(solicitudId, e.getMessage());
+    
+    // Obtener la configuración de reintentos
+    Switching_Configuration__c config = [SELECT Max_Retries__c, Retry_Interval__c 
+                                       FROM Switching_Configuration__c 
+                                       WHERE Distributor__c = 'NATURGY' 
+                                       AND Process_Type__c = 'ALTA_ELECTRICIDAD' 
+                                       LIMIT 1];
     
     // Programar reintento si es posible
-    if (SwitchingRetryHandler.esReintentable(e)) {
-        SwitchingRetryScheduler.programarReintento(solicitudId);
+    if (config != null && config.Max_Retries__c > 0) {
+        SwitchingRetryScheduler.programarReintento(solicitudId, config.Retry_Interval__c);
     }
 }
 ```
 
-### 8. Consulta de Historial
+### 9. Consulta de Historial
 ```apex
 // Obtener historial de mensajes para un suministro
 List<Switching_Message__c> historial = [
     SELECT Id, Message_Type__c, Status__c, Timestamp__c, 
-           Request_XML__c, Response_XML__c 
+           Request_XML__c, Response_XML__c, Service_Status__c
     FROM Switching_Message__c 
-    WHERE Service__c = :suministro.Id 
+    WHERE Request__c IN (
+        SELECT Id 
+        FROM Switching_Request__c 
+        WHERE Service__c = :suministro.Id
+    )
     ORDER BY Timestamp__c DESC
 ];
 
 for (Switching_Message__c msg : historial) {
     System.debug('Mensaje: ' + msg.Message_Type__c);
     System.debug('Estado: ' + msg.Status__c);
+    System.debug('Estado del Servicio: ' + msg.Service_Status__c);
     System.debug('Timestamp: ' + msg.Timestamp__c);
 }
 ```
