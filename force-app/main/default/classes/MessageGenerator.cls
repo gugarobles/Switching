@@ -170,4 +170,4 @@ public with sharing class MessageGenerator {
     }
     
     public class MessageGeneratorException extends Exception {}
-} 
+}

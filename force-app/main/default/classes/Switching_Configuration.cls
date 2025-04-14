@@ -12,4 +12,4 @@ public class Switching_Configuration {
         this.IntegrationClass = integrationClass;
         this.Active = true;
     }
-} 
+}

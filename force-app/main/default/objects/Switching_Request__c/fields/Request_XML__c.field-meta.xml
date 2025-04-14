@@ -4,7 +4,6 @@
     <externalId>false</externalId>
     <label>Request XML</label>
     <length>131072</length>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>10</visibleLines>

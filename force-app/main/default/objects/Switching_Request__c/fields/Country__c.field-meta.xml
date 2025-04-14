@@ -11,15 +11,15 @@
         <valueSetDefinition>
             <sorted>false</sorted>
             <value>
-                <fullName>Spain</fullName>
+                <fullName>ES</fullName>
                 <default>true</default>
                 <label>Spain</label>
             </value>
             <value>
-                <fullName>Portugal</fullName>
+                <fullName>PT</fullName>
                 <default>false</default>
                 <label>Portugal</label>
             </value>
         </valueSetDefinition>
     </valueSet>
-</CustomField> 
+</CustomField>

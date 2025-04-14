@@ -5,7 +5,6 @@
     <label>New Holder NIF</label>
     <length>20</length>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

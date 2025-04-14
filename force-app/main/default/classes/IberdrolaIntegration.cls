@@ -11,7 +11,7 @@ public class IberdrolaIntegration extends BaseDistributorIntegration {
     }
     
     public override String generateRequest() {
-        // TODO: Implement Iberdrola-specific request generation logic
+        // TODO: Implement Iberdrola-specific request generation €logic
         return '';
     }
     

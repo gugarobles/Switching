@@ -25,6 +25,12 @@
                 <default>false</default>
                 <label>Iberdrola</label>
             </value>
+            <value>
+                <fullName>GASALTA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GASALTA</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

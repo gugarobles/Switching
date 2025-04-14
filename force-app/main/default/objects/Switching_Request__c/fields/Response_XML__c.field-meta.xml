@@ -6,7 +6,6 @@
     <inlineHelpText>XML content of the response received from the distributor</inlineHelpText>
     <label>Response XML</label>
     <length>131072</length>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>LongTextArea</type>
     <visibleLines>10</visibleLines>

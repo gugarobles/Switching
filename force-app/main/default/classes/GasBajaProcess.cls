@@ -66,4 +66,4 @@ public with sharing class GasBajaProcess extends BaseSwitchingProcess {
         );
         insert notification;
     }
-} 
+}

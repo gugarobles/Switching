@@ -47,4 +47,4 @@ public class ElecCambioComercializadoraTitularProcess {
     }
 
     public class SwitchingException extends Exception {}
-} 
+}

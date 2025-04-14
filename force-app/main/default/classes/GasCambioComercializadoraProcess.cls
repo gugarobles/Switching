@@ -66,4 +66,4 @@ public with sharing class GasCambioComercializadoraProcess extends BaseSwitching
         );
         insert notification;
     }
-} 
+}

@@ -3,8 +3,9 @@
     <fullName>Process_Code__c</fullName>
     <externalId>false</externalId>
     <label>Process Code</label>
-    <required>true</required>
-    <type>Text</type>
     <length>10</length>
+    <required>true</required>
+    <trackTrending>false</trackTrending>
+    <type>Text</type>
     <unique>false</unique>
-</CustomField> 
+</CustomField>

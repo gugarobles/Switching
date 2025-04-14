@@ -9,7 +9,6 @@
     <relationshipLabel>Switching Requests</relationshipLabel>
     <relationshipName>Switching_Requests</relationshipName>
     <required>true</required>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

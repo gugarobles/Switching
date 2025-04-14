@@ -6,4 +6,4 @@ public with sharing class Switching_Configuration_Selector {
                 AND Process_Type__c = :processType
                 AND Active__c = true];
     }
-} 
+}

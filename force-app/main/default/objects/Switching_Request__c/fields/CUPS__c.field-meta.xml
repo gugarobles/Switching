@@ -7,7 +7,6 @@
     <label>CUPS</label>
     <length>20</length>
     <required>true</required>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Text</type>
     <unique>false</unique>

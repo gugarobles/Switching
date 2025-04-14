@@ -17,4 +17,4 @@ trigger SwitchingRequestTrigger on Switching_Request__c (after insert, after upd
     if (!requestsToProcess.isEmpty()) {
         Switching_Service.sendRequest(requestsToProcess);
     }
-} 
+}

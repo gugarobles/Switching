@@ -27,6 +27,36 @@
                 <default>false</default>
                 <label>Iberdrola</label>
             </value>
+            <value>
+                <fullName>GASNATURAL</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>GASNATURAL</label>
+            </value>
+            <value>
+                <fullName>MADRILEÑA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>MADRILEÑA</label>
+            </value>
+            <value>
+                <fullName>NEDGIA</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NEDGIA</label>
+            </value>
+            <value>
+                <fullName>NORTEGAS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>NORTEGAS</label>
+            </value>
+            <value>
+                <fullName>REDEXIS</fullName>
+                <default>false</default>
+                <isActive>false</isActive>
+                <label>REDEXIS</label>
+            </value>
         </valueSetDefinition>
     </valueSet>
 </CustomField>

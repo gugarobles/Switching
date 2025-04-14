@@ -16,7 +16,8 @@ public class DistributorIntegrationFactory {
         if (request == null || request.Distributor__c == null) {
             throw new DistributorIntegrationException('Invalid request: missing distributor information');
         }
-        return createIntegration(request.Distributor__c);
+        //return createIntegration(request.Distributor__r.Name);
+        return createIntegration('ENDESA');
     }
 
     public class DistributorIntegrationException extends Exception {}

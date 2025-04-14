@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Configuration__c</fullName>
-    <description>Related switching configuration record</description>
     <deleteConstraint>SetNull</deleteConstraint>
+    <description>Related switching configuration record</description>
     <externalId>false</externalId>
     <inlineHelpText>Select the switching configuration to use for this request</inlineHelpText>
     <label>Configuration</label>
@@ -10,7 +10,6 @@
     <relationshipLabel>Switching Requests</relationshipLabel>
     <relationshipName>Switching_Requests</relationshipName>
     <required>false</required>
-    <trackHistory>false</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Lookup</type>
 </CustomField>

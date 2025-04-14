@@ -66,4 +66,4 @@ public with sharing class GasCambioTitularProcess extends BaseSwitchingProcess {
         );
         insert notification;
     }
-} 
+}

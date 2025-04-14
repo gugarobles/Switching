@@ -6,7 +6,6 @@
     <inlineHelpText>Current status of the switching request</inlineHelpText>
     <label>Status</label>
     <required>true</required>
-    <trackHistory>true</trackHistory>
     <trackTrending>false</trackTrending>
     <type>Picklist</type>
     <valueSet>
